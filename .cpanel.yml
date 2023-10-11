@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/a7o1a0li8krc/public_html/
+    - export DEPLOYPATH=/home/a7o1a0li8krc/public_html/staging.clienserv.com
     - /bin/cp * $DEPLOYPATH

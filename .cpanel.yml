@@ -1,5 +1,21 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/a7o1a0li8krc/public_html/staging.clienserv.com
-    - /bin/cp * $DEPLOYPATH
+#!/bin/bash
+
+# Define the deployment path
+DEPLOYPATH="/home/a7o1a0li8krc/public_html/staging.clienserv.com"
+
+# Check if the deployment path exists
+if [ ! -d "$DEPLOYPATH" ]; then
+  echo "Deployment path does not exist: $DEPLOYPATH"
+  exit 1
+fi
+
+# Copy files from the current directory to the deployment path
+cp -r * "$DEPLOYPATH"
+
+# Check if the copy operation was successful
+if [ $? -eq 0 ]; then
+  echo "Deployment successful"
+else
+  echo "Deployment failed"
+  exit 1
+fi

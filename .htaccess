@@ -1,0 +1,21 @@
+php_value max_input_vars 1000000
+php_value suhosin.get.max_vars 1000000
+php_value suhosin.post.max_vars 1000000
+php_value suhosin.request.max_vars 1000000
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+RewriteRule ^login html/ltr/login.php
+RewriteRule ^Dashboard html/Dashboard.php
+RewriteRule ^client_master html/client_master.php
+RewriteRule ^profile html/profile.php
+RewriteRule ^department html/department.php
+RewriteRule ^designation html/designation.php
+RewriteRule ^mail_panel html/mail_panel.php
+RewriteRule ^add_users html/add_users.php
+RewriteRule ^company_profile html/company_profile.php
+
+
+
